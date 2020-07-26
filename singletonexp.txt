@@ -1,0 +1,49 @@
+using System;
+ 
+namespace SingletonExample
+{
+  
+  class Program
+
+  {
+   
+    static void Main()
+    {
+      Singleton s1 = Singleton.Instance();
+      Singleton s2 = Singleton.Instance();
+ 
+     
+
+      if (s1 == s2)
+      {
+        Console.WriteLine("Both objects contain the same instance of the class");
+      }
+ 
+     
+      Console.ReadKey();
+    }
+  }
+ 
+ 
+
+  class Singleton
+
+  {
+    private static Singleton instance1;
+ 
+    protected Singleton()
+    {
+    }
+ 
+    public static Singleton Instance()
+    {
+      
+      if (instance1 == null)
+      {
+        instance1 = new Singleton();
+      }
+ 
+      return instance1;
+    }
+  }
+}
